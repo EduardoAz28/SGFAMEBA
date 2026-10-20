@@ -1,153 +1,108 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Productos — SGFAMEBASAC</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <link rel="stylesheet" href="estilos/productos.css">
-  <link rel="shortcut icon" href="imagenes/logo2.jpg" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Productos | SGFAMEBASAC</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="estilos/estilos.css">
+<link rel="stylesheet" href="estilos/productos.css">
+<link rel="stylesheet" href="estilos/carrito.css">
 </head>
 <body>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top shadow">
-    <div class="container">
-      <a class="navbar-brand d-flex align-items-center" href="index.html">
-        <img src="imagenes/logo2.jpg" alt="Logo SGFAMEBASAC" class="logo-nav me-2" style="height: 40px !important; width: 40px !important; object-fit: cover !important; border-radius: 50% !important;">
-        <span class="fw-bold">SGFAMEBASAC</span>
-      </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="index.html">Inicio</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="nosotros.html">Nosotros</a>
-          </li>
 
-          <!-- Servicios con submenú -->
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="servicios.html">Servicios</a>
-            <ul class="dropdown-menu">
-              <li class="has-submenu">
-                <a class="dropdown-item" href="preguntas.html">Preguntas</a>
-                <ul class="submenu">
-                  <li><a class="dropdown-item" href="servicios.html">¿Qué ofrecemos?</a></li>
-                </ul>
-              </li>
-            </ul>
-          </li>
+<!-- Pega aquí tu .topbar y tu <nav class="barra"> con el menú -->
+<!-- Botón del carrito (agrégalo dentro de tu .barra si prefieres) -->
+<button id="btnCarrito" class="btn-carrito" aria-label="Abrir carrito">
+  <i class="fa-solid fa-cart-shopping"></i>
+  <span id="contadorCarrito">0</span>
+</button>
 
-          <li class="nav-item">
-            <a class="nav-link active" href="productos.html">Productos</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="contacto.html">Contacto</a>
-          </li>
-        </ul>
-      </div>
+<section>
+  <div class="contenedor">
+    <h2 class="titulo">Nuestros Productos</h2>
+
+    <div class="filtros">
+      <button class="activo" data-filtro="todos">Todos</button>
+      <button data-filtro="aire">Aire acondicionado</button>
+      <button data-filtro="ventilacion">Ventilación</button>
     </div>
-  </nav>
 
-  <div class="social-sidebar-right">
-    <a href="https://wa.me/51977728643" target="_blank" class="social-icon whatsapp" title="WhatsApp Business">
-      <i class="fa-brands fa-whatsapp"></i>
-    </a>
-    <a href="https://facebook.com" target="_blank" class="social-icon facebook" title="Facebook">
-      <i class="fa-brands fa-facebook-f"></i>
-    </a>
-    <a href="https://instagram.com" target="_blank" class="social-icon instagram" title="Instagram">
-      <i class="fa-brands fa-instagram"></i>
-    </a>
-    <a href="https://tiktok.com" target="_blank" class="social-icon tiktok" title="TikTok">
-      <i class="fa-brands fa-tiktok"></i>
-    </a>
+    <div class="grid" id="listaProductos">
+
+      <article class="card producto" data-categoria="aire" data-id="1" data-nombre="Split York 9000 BTU" data-precio="1450">
+        <span class="etiqueta">York</span>
+        <img src="imagenes/split-9000.jpg" alt="Split York 9000 BTU">
+        <h3>Split York 9000 BTU</h3>
+        <p>Ideal para dormitorios y oficinas pequeñas.</p>
+        <div class="precio">S/ 1,450.00</div>
+        <button class="btn btn-agregar">Añadir al carrito</button>
+      </article>
+
+      <article class="card producto" data-categoria="aire" data-id="2" data-nombre="Split York 12000 BTU" data-precio="1750">
+        <span class="etiqueta">York</span>
+        <img src="imagenes/split-12000.jpg" alt="Split York 12000 BTU">
+        <h3>Split York 12000 BTU</h3>
+        <p>Para ambientes medianos, bajo consumo.</p>
+        <div class="precio">S/ 1,750.00</div>
+        <button class="btn btn-agregar">Añadir al carrito</button>
+      </article>
+
+      <article class="card producto" data-categoria="aire" data-id="3" data-nombre="Split 18000 BTU" data-precio="2300">
+        <img src="imagenes/split-18000.jpg" alt="Split 18000 BTU">
+        <h3>Split 18000 BTU</h3>
+        <p>Ideal para salas y locales comerciales.</p>
+        <div class="precio">S/ 2,300.00</div>
+        <button class="btn btn-agregar">Añadir al carrito</button>
+      </article>
+
+      <article class="card producto" data-categoria="aire" data-id="4" data-nombre="Cassette 24000 BTU" data-precio="3900">
+        <img src="imagenes/cassette.jpg" alt="Cassette 24000 BTU">
+        <h3>Cassette 24000 BTU</h3>
+        <p>Para techo, uso comercial.</p>
+        <div class="precio">S/ 3,900.00</div>
+        <button class="btn btn-agregar">Añadir al carrito</button>
+      </article>
+
+      <article class="card producto" data-categoria="ventilacion" data-id="5" data-nombre="Extractor de aire" data-precio="180">
+        <img src="imagenes/extractor.jpg" alt="Extractor de aire">
+        <h3>Extractor de aire</h3>
+        <p>Renueva el aire en cocinas y baños.</p>
+        <div class="precio">S/ 180.00</div>
+        <button class="btn btn-agregar">Añadir al carrito</button>
+      </article>
+
+      <article class="card producto" data-categoria="ventilacion" data-id="6" data-nombre="Ventilador industrial" data-precio="450">
+        <img src="imagenes/ventilador.jpg" alt="Ventilador industrial">
+        <h3>Ventilador industrial</h3>
+        <p>Alto caudal para talleres y almacenes.</p>
+        <div class="precio">S/ 450.00</div>
+        <button class="btn btn-agregar">Añadir al carrito</button>
+      </article>
+
+    </div>
   </div>
+</section>
 
-  <header class="bg-light py-5 mb-5 text-center border-bottom main-content">
-    <div class="container">
-      <h1 class="display-5 fw-bold text-primary">Venta de Equipos de Climatización</h1>
-      <p class="lead text-muted">Distribución autorizada de las marcas líderes en el mercado para soluciones residenciales, comerciales e industriales.</p>
-    </div>
-  </header>
+<!-- PANEL DEL CARRITO -->
+<div id="fondoCarrito" class="fondo-carrito"></div>
+<aside id="panelCarrito" class="panel-carrito">
+  <div class="panel-cabecera">
+    <h3><i class="fa-solid fa-cart-shopping"></i> Tu carrito</h3>
+    <button id="cerrarCarrito" aria-label="Cerrar">&times;</button>
+  </div>
+  <div id="itemsCarrito" class="items-carrito"></div>
+  <div class="panel-pie">
+    <div class="total">Total: <strong id="totalCarrito">S/ 0.00</strong></div>
+    <button id="btnWhatsapp" class="btn btn-wsp"><i class="fa-brands fa-whatsapp"></i> Enviar pedido por WhatsApp</button>
+    <button id="btnVaciar" class="btn-vaciar">Vaciar carrito</button>
+  </div>
+</aside>
 
-  <main class="pb-5">
-    <div class="container">
-      <div class="row g-4 justify-content-center">
+<div id="aviso" class="aviso"></div>
 
-        <div class="col-md-6 col-lg-4">
-          <div class="card h-100 product-card shadow-sm border-0">
-            <div class="card-img-wrapper p-4 text-center bg-white border-bottom">
-              <img src="imagenes/york.jpg" class="img-fluid product-img" alt="Equipos de Aire Acondicionado York">
-            </div>
-            <div class="card-body d-flex flex-column">
-              <span class="badge bg-primary w-fit mb-2">Distribuidor Autorizado</span>
-              <h4 class="card-title fw-bold text-primary">Equipos York</h4>
-              <p class="card-text text-muted">
-                Sistemas de climatización de alta eficiencia energética y máxima durabilidad. Disponibles en versiones Split Pared, Cassette y Unidades Centrales diseñadas para proyectos residenciales y comerciales de alta exigencia.
-              </p>
-              <a href="https://wa.me/51977728643?text=Hola,%20quisiera%20cotizar%20un%20equipo%20de%20aire%20acondicionado%20marca%20York." target="_blank" class="btn btn-outline-primary mt-auto fw-bold">
-                <i class="fa-brands fa-whatsapp me-2"></i>Cotizar York
-              </a>
-            </div>
-          </div>
-        </div>
+<!-- Pega aquí tu footer-pro, redes y botón de ayuda -->
 
-        <div class="col-md-6 col-lg-4">
-          <div class="card h-100 product-card shadow-sm border-0">
-            <div class="card-img-wrapper p-4 text-center bg-white border-bottom">
-              <img src="imagenes/midea.jpg" class="img-fluid product-img" alt="Equipos de Aire Acondicionado Midea">
-            </div>
-            <div class="card-body d-flex flex-column">
-              <span class="badge bg-primary w-fit mb-2">Distribuidor Autorizado</span>
-              <h4 class="card-title fw-bold text-primary">Equipos Midea</h4>
-              <p class="card-text text-muted">
-                Tecnología Inverter avanzada con máximo ahorro de energía eléctrica, bajo nivel sonoro y rápida capacidad de enfriamiento. Ideal para hogares, oficinas y locales comerciales.
-              </p>
-              <a href="https://wa.me/51977728643?text=Hola,%20quisiera%20cotizar%20un%20equipo%20de%20aire%20acondicionado%20marca%20Midea." target="_blank" class="btn btn-outline-primary mt-auto fw-bold">
-                <i class="fa-brands fa-whatsapp me-2"></i>Cotizar Midea
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-6 col-lg-4">
-          <div class="card h-100 product-card shadow-sm border-0">
-            <div class="card-img-wrapper p-4 text-center bg-white border-bottom">
-              <img src="imagenes/carrier.jpg" class="img-fluid product-img" alt="Equipos de Aire Acondicionado Carrier">
-            </div>
-            <div class="card-body d-flex flex-column">
-              <span class="badge bg-primary w-fit mb-2">Distribuidor Autorizado</span>
-              <h4 class="card-title fw-bold text-primary">Equipos Carrier</h4>
-              <p class="card-text text-muted">
-                Líder global e inventor del aire acondicionado moderno. Ofrecemos sistemas integrales de alta confiabilidad en presentaciones:
-              </p>
-              <ul class="text-muted small ps-3 mb-3">
-                <li>Sistemas Split Pared e Inverter</li>
-                <li>Equipos Tipo Cassette e Inductados</li>
-                <li>Sistemas Centrales por Ducto</li>
-                <li>Unidades Piso Techo y Fancoil</li>
-              </ul>
-              <a href="https://wa.me/51977728643?text=Hola,%20quisiera%20cotizar%20un%20equipo%20de%20aire%20acondicionado%20marca%20Carrier." target="_blank" class="btn btn-outline-primary mt-auto fw-bold">
-                <i class="fa-brands fa-whatsapp me-2"></i>Cotizar Carrier
-              </a>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </main>
-
-  <footer class="bg-dark text-white text-center py-3">
-    <div class="container">
-      <p class="mb-0">&copy; 2026 SGFAMEBASAC - RUC: 20606962496 | San Juan de Lurigancho, Lima - Perú</p>
-    </div>
-  </footer>
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/carrito.js"></script>
 </body>
 </html>
