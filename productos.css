@@ -1,0 +1,209 @@
+/* ==========================================
+   ESTILOS GENERALES Y LAYOUT
+=========================================== */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f8f9fa;
+}
+
+/* Espacio superior compensado para la navbar fija */
+.main-content {
+  padding-top: 80px;
+}
+
+/* Logo en la barra de navegación */
+.logo-nav {
+  height: 40px !important;
+  width: 40px !important;
+  max-height: 40px !important;
+  max-width: 40px !important;
+  object-fit: cover !important;
+}
+
+/* ==========================================
+   BARRA DE NAVEGACIÓN SUPERIOR FIJA
+=========================================== */
+.navbar.bg-primary,
+.bg-primary {
+  background-color: #0d5ca4 !important; /* Color azul institucional unificado */
+}
+
+/* Opcional: Color al pasar el cursor o elementos activos */
+.navbar-dark .navbar-nav .nav-link:hover,
+.navbar-dark .navbar-nav .nav-link.active {
+  color: #ffffff !important;
+  font-weight: 600;
+}
+
+.w-fit {
+  width: fit-content;
+}
+
+/* ==========================================
+   TARJETAS DE PRODUCTOS
+=========================================== */
+.product-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12) !important;
+}
+
+.card-img-wrapper {
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.product-img {
+  max-height: 140px;
+  width: auto;
+  object-fit: contain;
+}
+
+/* ==========================================
+   BARRA LATERAL FLOTANTE DE REDES SOCIALES
+=========================================== */
+.social-sidebar-right {
+  position: fixed;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1050;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.social-icon {
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-size: 20px;
+  text-decoration: none;
+  border-top-left-radius: 6px;
+  border-bottom-left-radius: 6px;
+  box-shadow: -2px 2px 6px rgba(0, 0, 0, 0.15);
+  transition: transform 0.2s ease;
+}
+
+.social-icon:hover {
+  transform: translateX(-5px);
+  color: #ffffff;
+}
+
+/* Colores de Redes Sociales */
+.social-icon.whatsapp {
+  background-color: #25D366;
+}
+
+.social-icon.facebook {
+  background-color: #1877F2;
+}
+
+.social-icon.instagram {
+  background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+}
+
+.social-icon.tiktok {
+  background-color: #000000;
+}
+
+@media (max-width: 576px) {
+  .social-icon {
+    width: 38px;
+    height: 38px;
+    font-size: 16px;
+  }
+}
+
+/* Sobrescribe el color del texto azul claro por tu azul deseado (#0d5ca4) */
+.text-primary {
+  color: #0d5ca4 !important;
+}
+
+/* Sobrescribe el color de los botones principales */
+.btn-primary {
+  background-color: #0d5ca4 !important;
+  border-color: #0d5ca4 !important;
+}
+
+/* Efecto hover opcional para el botón */
+.btn-primary:hover {
+  background-color: #0a4982 !important;
+  border-color: #0a4982 !important;
+}
+
+/* ==========================================
+   SUBMENÚ DE SERVICIOS
+=========================================== */
+.navbar .dropdown-menu {
+  border: 0;
+  border-radius: .5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  padding: .5rem 0;
+}
+
+/* Abrir el desplegable al pasar el mouse (solo en escritorio) */
+@media (min-width: 992px) {
+  .navbar .dropdown:hover > .dropdown-menu {
+    display: block;
+    margin-top: 0;
+  }
+}
+
+.has-submenu {
+  position: relative;
+}
+
+.submenu {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 100%;
+  min-width: 200px;
+  list-style: none;
+  margin: 0;
+  padding: .5rem 0;
+  background: #fff;
+  border-radius: .5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.has-submenu:hover > .submenu {
+  display: block;
+}
+
+/* En celular: el desplegable y el submenú se muestran debajo, con sangría */
+@media (max-width: 991px) {
+  .navbar .dropdown-menu {
+    display: block;
+    position: static;
+    background: transparent;
+    box-shadow: none;
+    padding: 0 0 0 1rem;
+  }
+
+  .navbar .dropdown-item {
+    color: rgba(255, 255, 255, 0.75);
+  }
+
+  .navbar .dropdown-item:hover {
+    background: transparent;
+    color: #fff;
+  }
+
+  .submenu {
+    position: static;
+    display: block;
+    background: transparent;
+    box-shadow: none;
+    padding-left: 1rem;
+  }
+}
